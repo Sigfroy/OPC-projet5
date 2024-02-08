@@ -35,8 +35,19 @@ arrow_left.addEventListener("click", () => {
 });
 
 arrow_right.addEventListener("click", () => {
-	ccurrentSlide = (currentSlide + 1) % slides.length;
+	currentSlide = (currentSlide + 1) % slides.length;
     updateSlide();
 });
+
+//* création fonction updateSlide  *//
+
+function updateSlide() {
+    bannerImg.src = `./assets/images/slideshow/${slides[currentSlide].image}`;
+    bannerText.innerHTML = slides[currentSlide].tagLine;
+    updateBulletPoint();
+}
+
+//* création fonction updateBulletPoint  *//
+
 
 
