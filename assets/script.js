@@ -17,6 +17,8 @@ const slides = [
 	}
 ]
 
+//* Déclaration des variables  *//
+
 const arrow_left = document.querySelector(".arrow_left");
 const arrow_right = document.querySelector(".arrow_right");
 
