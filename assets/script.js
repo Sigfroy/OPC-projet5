@@ -21,11 +21,22 @@ const slides = [
 
 const arrow_left = document.querySelector(".arrow_left");
 const arrow_right = document.querySelector(".arrow_right");
+const dots = document.querySelectorAll(".dots span");
+const bannerImg = document.querySelector(".banner-img");
+const bannerText = document.querySelector("#banner p");
+
+let currentSlide = 0;
+
+//* ajout des eventListener flèches gauche et droite  *//
 
 arrow_left.addEventListener("click", () => {
-	console.log("flèche gauche cliquée");
+	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+	updateSlide();
 });
 
 arrow_right.addEventListener("click", () => {
-	console.log("flèche droite cliquée");
+	ccurrentSlide = (currentSlide + 1) % slides.length;
+    updateSlide();
 });
+
+
