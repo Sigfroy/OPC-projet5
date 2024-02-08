@@ -19,8 +19,8 @@ const slides = [
 
 //* Déclaration des variables  *//
 
-const arrow_left = document.querySelector(".arrow_left");
-const arrow_right = document.querySelector(".arrow_right");
+const arrowLeft = document.querySelector(".arrow_left");
+const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelectorAll(".dots span");
 const bannerImg = document.querySelector(".banner-img");
 const bannerText = document.querySelector("#banner p");
@@ -29,12 +29,31 @@ let currentSlide = 0;
 
 //* ajout des eventListener flèches gauche et droite  *//
 
-arrow_left.addEventListener("click", () => {
+arrowLeft.addEventListener("click", () => {
 	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
 	updateSlide();
 });
 
-arrow_right.addEventListener("click", () => {
+// arrowLeft.addEventListener("click", () => {
+//     if (currentSlide === 0) {
+//         currentSlide = slides.length - 1;
+//     } else {
+//         currentSlide--;
+//     }
+//     updateSlide();
+// });
+
+// arrowRight.addEventListener("click", () => {
+//     if (currentSlide === slides.length) {
+//         currentSlide = 0;
+//     } else {
+//         currentSlide++;
+//     }
+//     updateSlide();
+// });
+
+
+arrowRight.addEventListener("click", () => {
 	currentSlide = (currentSlide + 1) % slides.length;
     updateSlide();
 });
@@ -48,6 +67,15 @@ function updateSlide() {
 }
 
 //* création fonction updateBulletPoint  *//
+function updateBulletPoint() {
+    dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+            dot.classList.add("dot_selected");
+        } else {
+            dot.classList.remove("dot_selected");
+        }
+    });
+}
 
 
 
