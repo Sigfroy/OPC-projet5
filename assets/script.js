@@ -27,13 +27,6 @@ const bannerText = document.querySelector("#banner p");
 
 let currentSlide = 0;
 
-//* ajout des eventListener flèches gauche et droite  *//
-
-// arrowLeft.addEventListener("click", () => {
-// 	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-// 	updateSlide();
-// });
-
 arrowLeft.addEventListener("click", () => {
     if (currentSlide === 0) {
         currentSlide = slides.length - 1;
@@ -52,12 +45,6 @@ arrowRight.addEventListener("click", () => {
     updateSlide();
 });
 
-
-
-// arrowRight.addEventListener("click", () => {
-// 	currentSlide = (currentSlide + 1) % slides.length;
-//     updateSlide();
-// });
 
 //* création fonction updateSlide  *//
 
