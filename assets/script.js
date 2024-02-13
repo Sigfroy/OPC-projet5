@@ -29,34 +29,35 @@ let currentSlide = 0;
 
 //* ajout des eventListener flèches gauche et droite  *//
 
-arrowLeft.addEventListener("click", () => {
-	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-	updateSlide();
-});
-
 // arrowLeft.addEventListener("click", () => {
-//     if (currentSlide === 0) {
-//         currentSlide = slides.length - 1;
-//     } else {
-//         currentSlide--;
-//     }
-//     updateSlide();
+// 	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+// 	updateSlide();
 // });
 
-// arrowRight.addEventListener("click", () => {
-//     if (currentSlide === slides.length) {
-//         currentSlide = 0;
-//     } else {
-//         currentSlide++;
-//     }
-//     updateSlide();
-// });
-
-
-arrowRight.addEventListener("click", () => {
-	currentSlide = (currentSlide + 1) % slides.length;
+arrowLeft.addEventListener("click", () => {
+    if (currentSlide === 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide--;
+    }
     updateSlide();
 });
+
+arrowRight.addEventListener("click", () => {
+    if (currentSlide === slides.length - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide++;
+    }
+    updateSlide();
+});
+
+
+
+// arrowRight.addEventListener("click", () => {
+// 	currentSlide = (currentSlide + 1) % slides.length;
+//     updateSlide();
+// });
 
 //* création fonction updateSlide  *//
 
